@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "MMcustomTableViewCell.h"
+
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,copy)NSString * contentText;
+@property (nonatomic,retain)NSArray * dataSource;
 
 @end
 
@@ -16,13 +22,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.tableView registerNib:[UINib nibWithNibName:@"MMcustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"MMcustomTableViewCell"];
+    self.title =  @"动态取行高";
+    self.tableView.estimatedRowHeight = 244.f;
+        _dataSource = @[@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe",@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe",@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe",@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe",@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe",@"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad adasd fwqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdad", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe", @"asdqweqweqwe asdadqwe dsd ad qweqwe qasd ad qwe qwe qw asd qwe f eaf asf asdf sf f we sdadadnajkwnejwn nd jknd jnasjkd nqjwn jqwn qwe wd ad and jka ndjknadj najdn iabduiqwb iqb iandi aid nind iand waeqwe"];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSource.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MMcustomTableViewCell * cell = (MMcustomTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    cell.contentLabel.preferredMaxLayoutWidth = self.view.bounds.size.width;
+    cell.bottomLabel.preferredMaxLayoutWidth = self.view.bounds.size.width;
+    CGFloat height = [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    NSLog(@"%lf",height);
+    return height;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MMcustomTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"MMcustomTableViewCell"];
+    
+    cell.contentLabel.text = self.dataSource[indexPath.row];
+    cell.bottomLabel.text = self.dataSource[indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 

@@ -10,11 +10,14 @@
 		B07C37DF1D93DA7D00DAE562 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C37DE1D93DA7D00DAE562 /* main.m */; };
 		B07C37E21D93DA7D00DAE562 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C37E11D93DA7D00DAE562 /* AppDelegate.m */; };
 		B07C37E51D93DA7D00DAE562 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C37E41D93DA7D00DAE562 /* ViewController.m */; };
-		B07C37E81D93DA7D00DAE562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07C37E61D93DA7D00DAE562 /* Main.storyboard */; };
 		B07C37EA1D93DA7D00DAE562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07C37E91D93DA7D00DAE562 /* Assets.xcassets */; };
 		B07C37ED1D93DA7D00DAE562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07C37EB1D93DA7D00DAE562 /* LaunchScreen.storyboard */; };
 		B07C37F81D93DA7D00DAE562 /* HighDynamicRowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C37F71D93DA7D00DAE562 /* HighDynamicRowTests.m */; };
 		B07C38031D93DA7D00DAE562 /* HighDynamicRowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C38021D93DA7D00DAE562 /* HighDynamicRowUITests.m */; };
+		B07C38111D93DB1700DAE562 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07C38101D93DB1700DAE562 /* ViewController.xib */; };
+		B07C38151D93DBE200DAE562 /* MMcustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C38131D93DBE200DAE562 /* MMcustomTableViewCell.m */; };
+		B07C38161D93DBE200DAE562 /* MMcustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07C38141D93DBE200DAE562 /* MMcustomTableViewCell.xib */; };
+		B07C38181D93DC7400DAE562 /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07C38171D93DC7400DAE562 /* me.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,6 @@
 		B07C37E11D93DA7D00DAE562 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B07C37E31D93DA7D00DAE562 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B07C37E41D93DA7D00DAE562 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B07C37E71D93DA7D00DAE562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B07C37E91D93DA7D00DAE562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07C37EC1D93DA7D00DAE562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07C37EE1D93DA7D00DAE562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,11 @@
 		B07C37FE1D93DA7D00DAE562 /* HighDynamicRowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighDynamicRowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07C38021D93DA7D00DAE562 /* HighDynamicRowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighDynamicRowUITests.m; sourceTree = "<group>"; };
 		B07C38041D93DA7D00DAE562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B07C38101D93DB1700DAE562 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		B07C38121D93DBE200DAE562 /* MMcustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMcustomTableViewCell.h; sourceTree = "<group>"; };
+		B07C38131D93DBE200DAE562 /* MMcustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMcustomTableViewCell.m; sourceTree = "<group>"; };
+		B07C38141D93DBE200DAE562 /* MMcustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMcustomTableViewCell.xib; sourceTree = "<group>"; };
+		B07C38171D93DC7400DAE562 /* me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +108,15 @@
 		B07C37DC1D93DA7C00DAE562 /* HighDynamicRow */ = {
 			isa = PBXGroup;
 			children = (
+				B07C38171D93DC7400DAE562 /* me.jpg */,
 				B07C37E01D93DA7D00DAE562 /* AppDelegate.h */,
 				B07C37E11D93DA7D00DAE562 /* AppDelegate.m */,
+				B07C38121D93DBE200DAE562 /* MMcustomTableViewCell.h */,
+				B07C38131D93DBE200DAE562 /* MMcustomTableViewCell.m */,
+				B07C38141D93DBE200DAE562 /* MMcustomTableViewCell.xib */,
 				B07C37E31D93DA7D00DAE562 /* ViewController.h */,
 				B07C37E41D93DA7D00DAE562 /* ViewController.m */,
-				B07C37E61D93DA7D00DAE562 /* Main.storyboard */,
+				B07C38101D93DB1700DAE562 /* ViewController.xib */,
 				B07C37E91D93DA7D00DAE562 /* Assets.xcassets */,
 				B07C37EB1D93DA7D00DAE562 /* LaunchScreen.storyboard */,
 				B07C37EE1D93DA7D00DAE562 /* Info.plist */,
@@ -250,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07C37ED1D93DA7D00DAE562 /* LaunchScreen.storyboard in Resources */,
+				B07C38111D93DB1700DAE562 /* ViewController.xib in Resources */,
+				B07C38161D93DBE200DAE562 /* MMcustomTableViewCell.xib in Resources */,
+				B07C38181D93DC7400DAE562 /* me.jpg in Resources */,
 				B07C37EA1D93DA7D00DAE562 /* Assets.xcassets in Resources */,
-				B07C37E81D93DA7D00DAE562 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +291,7 @@
 			files = (
 				B07C37E51D93DA7D00DAE562 /* ViewController.m in Sources */,
 				B07C37E21D93DA7D00DAE562 /* AppDelegate.m in Sources */,
+				B07C38151D93DBE200DAE562 /* MMcustomTableViewCell.m in Sources */,
 				B07C37DF1D93DA7D00DAE562 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,14 +328,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B07C37E61D93DA7D00DAE562 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B07C37E71D93DA7D00DAE562 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B07C37EB1D93DA7D00DAE562 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M99GJD8799;
 				INFOPLIST_FILE = HighDynamicRow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "QQ-744245104.HighDynamicRow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,6 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M99GJD8799;
 				INFOPLIST_FILE = HighDynamicRow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "QQ-744245104.HighDynamicRow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
